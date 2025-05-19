@@ -1,15 +1,16 @@
 {
   "name": "puppeteer-prerender",
   "version": "1.0.0",
-  "description": "Puppeteer serverless function for prerendering pages on Vercel",
+  "description": "Serverless Puppeteer prerendering for factorykaam",
   "main": "api/prerender.js",
+  "scripts": {
+    "start": "vercel dev"
+  },
   "dependencies": {
     "puppeteer-core": "^10.1.0",
     "chrome-aws-lambda": "^10.1.0"
   },
-  "scripts": {
-    "start": "node api/prerender.js"
-  },
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {
+    "vercel": "^28.0.0"
+  }
 }

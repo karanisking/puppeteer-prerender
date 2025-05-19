@@ -2,14 +2,14 @@
     "version": 2,
     "functions": {
       "api/prerender.js": {
-        "memory": 1024,
-        "maxDuration": 30
+        "memory": 2048,
+        "maxDuration": 60
       }
     },
-    "routes": [
+    "builds": [
       {
-        "src": "/api/prerender",
-        "dest": "/api/prerender.js"
+        "src": "api/prerender.js",
+        "use": "@vercel/node"
       }
     ]
   }
