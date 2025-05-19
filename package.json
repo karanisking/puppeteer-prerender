@@ -1,16 +1,15 @@
 {
-  "name": "puppeteer-prerende",
+  "name": "puppeteer-prerender",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "Puppeteer serverless function for prerendering pages on Vercel",
+  "main": "api/prerender.js",
   "dependencies": {
-    "chrome-aws-lambda": "^10.1.0",
-    "puppeteer-core": "^24.8.2"
-  }
+    "puppeteer-core": "^22.15.0",
+    "chrome-aws-lambda": "^22.15.0"
+  },
+  "scripts": {
+    "start": "node api/prerender.js"
+  },
+  "author": "",
+  "license": "ISC"
 }
