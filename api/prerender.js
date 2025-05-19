@@ -7,8 +7,9 @@ module.exports = async (req, res) => {
     return res.status(400).send('URL is required');
   }
 
+  let browser = null;
   try {
-    const browser = await puppeteer.launch({
+    browser = await puppeteer.launch({
       args: chrome.args,
       executablePath: await chrome.executablePath,
       headless: true,
@@ -19,7 +20,7 @@ module.exports = async (req, res) => {
     await page.evaluate(() => {
       return new Promise((resolve) => {
         const checkReady = () => {
-          if (window.prerenderReady) {
+          if (window.prerenderReady || (window.PrERENDER && window.PrERENDER.ready)) {
             resolve();
           } else {
             setTimeout(checkReady, 100);
@@ -36,5 +37,9 @@ module.exports = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).send('Error rendering page');
+  } finally {
+    if (browser) {
+      await browser.close();
+    }
   }
 };
