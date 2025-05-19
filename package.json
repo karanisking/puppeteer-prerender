@@ -4,8 +4,8 @@
   "description": "Puppeteer serverless function for prerendering pages on Vercel",
   "main": "api/prerender.js",
   "dependencies": {
-    "puppeteer-core": "^22.15.0",
-    "chrome-aws-lambda": "^22.15.0"
+    "puppeteer-core": "^10.1.0",
+    "chrome-aws-lambda": "^10.1.0"
   },
   "scripts": {
     "start": "node api/prerender.js"
